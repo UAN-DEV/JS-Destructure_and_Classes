@@ -3,7 +3,6 @@
 export class RangeValidator {
   #from;
   #to;
-
   constructor(from = 0, to = Infinity) {
     if (typeof from !== "number" || Number.isNaN(from)) {
       throw new TypeError("The minimun value of the range must be a number!");
