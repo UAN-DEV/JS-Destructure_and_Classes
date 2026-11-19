@@ -1,6 +1,6 @@
 "use strict";
 
-class RangeValidator {
+export class RangeValidator {
   #from;
   #to;
 
