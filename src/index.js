@@ -9,7 +9,7 @@ const post1 = new Post({
   likes: 15,
   image:
     "https://plus.unsplash.com/premium_photo-1747483640076-cc0ca2bba1e8?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
-  tags: ["javascript", "education", "web"],
+  tags: ["javascript", "education", "web", "css", "html", "fullstack", "news", "javascript", "C++", "education", "web"],
 });
 
 const post2 = new Post({
@@ -55,7 +55,7 @@ try {post2.updateText('  ')} catch (error) {console.log(error)}
 post3.like();
 post2.dislike();
 post1.addHashtag("web");
-post3.addHashtag("unknown_tag");
+post3.addHashtag("unknown_tag", "css");
 post3.addHashtag("css");
 post3.addHashtag("html");
 post4.addHashtag("html");
