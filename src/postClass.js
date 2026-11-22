@@ -33,8 +33,8 @@ export class Post {
   }
   get likes() {return this.#likes}
 
-  like() {this.likes += 1}
-  dislike() {if (this.likes > 0) this.likes -= 1}
+  like() {++this.likes}
+  dislike() {this.likes > 0 && --this.likes}
 
   updateText(newText) {
     if (typeof newText !== "string" || newText.trim() === '') {throw new Error("The text must not be empty")};

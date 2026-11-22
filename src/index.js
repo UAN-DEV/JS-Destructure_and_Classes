@@ -1,6 +1,8 @@
 "use strict";
 import { Post } from "./postClass.js";
+import { RangeValidator } from "./range-validator.js";
 
+// 1. Test class of Post
 const post1 = new Post({
   id: 1,
   title: "Lorem ipsum dolor sit amet consectetur adipisicing.",
@@ -61,3 +63,28 @@ post3.addHashtag("html");
 post4.addHashtag("html");
 
 [post1, post2, post3, post4, post5].forEach((post) => post.render());
+
+// 2. Test class of RangeValidator
+const myRange = new RangeValidator(1, 5.5); // Відпрацьовує
+try {const range1 = new RangeValidator(10, 5.5)} catch (error) {console.log(error)}
+console.log('myRange :>> ', myRange);
+
+myRange.from = 5; 
+console.log('myRange :>> ', myRange);
+
+try {myRange.from = 200} catch (error) {console.log(error)}
+
+myRange.to = 80; 
+console.log('myRange :>> ', myRange);
+
+try {myRange.to = -55} catch (error) {console.log(error)}
+
+console.log('myRange.from :>> ', myRange.from);
+
+console.log('myRange.to :>> ', myRange.to);
+
+console.log(myRange.range); 
+
+console.log(myRange.isValid(10)); 
+console.log(myRange.isValid(100)); 
+console.log(myRange.isValid('15')); 
